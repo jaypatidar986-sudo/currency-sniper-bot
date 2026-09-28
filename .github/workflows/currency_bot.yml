@@ -1,0 +1,47 @@
+name: Currency Sniper Bot
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: currency-bot
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install --quiet pandas numpy requests beautifulsoup4
+
+      - name: Run bot
+        env:
+          TD_KEY:          ${{ secrets.TD_KEY }}
+          TG_TOKEN:        ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID:      ${{ secrets.TG_CHAT_ID }}
+          ACCOUNT_BALANCE: ${{ secrets.ACCOUNT_BALANCE }}
+          RISK_PER_TRADE:  ${{ secrets.RISK_PER_TRADE }}
+        run: python currency_bot.py
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name  "currency-bot"
+          git config user.email "bot@bot.local"
+          git add bot_state.json news_cache.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "state $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push 2>/dev/null || true
