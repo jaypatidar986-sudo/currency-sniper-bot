@@ -1,0 +1,125 @@
+{
+  "fetched_at": "2026-09-28T08:53:04.796202+00:00",
+  "events": [
+    {
+      "title": "ECB President Lagarde Speaks",
+      "country": "EUR",
+      "date": "2026-09-28T09:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "ECB President Lagarde Speaks",
+      "country": "EUR",
+      "date": "2026-09-29T07:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "CB Consumer Confidence",
+      "country": "USD",
+      "date": "2026-09-29T10:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "JOLTS Job Openings",
+      "country": "USD",
+      "date": "2026-09-29T10:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "German Prelim CPI m/m",
+      "country": "EUR",
+      "date": "2026-09-30T02:29:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "ADP Non-Farm Employment Change",
+      "country": "USD",
+      "date": "2026-09-30T08:15:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "Core PCE Price Index m/m",
+      "country": "USD",
+      "date": "2026-09-30T08:30:00-04:00",
+      "impact": "high"
+    },
+    {
+      "title": "Final GDP q/q",
+      "country": "USD",
+      "date": "2026-09-30T08:30:00-04:00",
+      "impact": "high"
+    },
+    {
+      "title": "Final GDP Price Index q/q",
+      "country": "USD",
+      "date": "2026-09-30T08:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "BOE Gov Bailey Speaks",
+      "country": "GBP",
+      "date": "2026-10-01T04:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "Unemployment Claims",
+      "country": "USD",
+      "date": "2026-10-01T08:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "ECB President Lagarde Speaks",
+      "country": "EUR",
+      "date": "2026-10-01T09:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "FOMC Member Waller Speaks",
+      "country": "USD",
+      "date": "2026-10-01T10:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "ISM Manufacturing PMI",
+      "country": "USD",
+      "date": "2026-10-01T10:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "Tokyo Core CPI y/y",
+      "country": "JPY",
+      "date": "2026-10-01T19:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "Core CPI Flash Estimate y/y",
+      "country": "EUR",
+      "date": "2026-10-02T05:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "CPI Flash Estimate y/y",
+      "country": "EUR",
+      "date": "2026-10-02T05:00:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "Average Hourly Earnings m/m",
+      "country": "USD",
+      "date": "2026-10-02T08:30:00-04:00",
+      "impact": "high"
+    },
+    {
+      "title": "Non-Farm Employment Change",
+      "country": "USD",
+      "date": "2026-10-02T08:30:00-04:00",
+      "impact": "high"
+    },
+    {
+      "title": "Unemployment Rate",
+      "country": "USD",
+      "date": "2026-10-02T08:30:00-04:00",
+      "impact": "high"
+    }
+  ]
+}
