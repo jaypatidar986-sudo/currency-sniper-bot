@@ -27,8 +27,8 @@
     "GBPUSD_pullback_bear_SELL": "2026-09-28T08:53:04.740530+00:00",
     "GBPUSD_tweezer_top_SELL": "2026-09-28T08:53:04.740530+00:00"
   },
-  "last_heartbeat": "2026-09-28T16:28:46.634605+00:00",
-  "last_scan_msg": "2026-09-28T16:28:46.634605+00:00",
+  "last_heartbeat": "2026-09-28T16:56:38.841785+00:00",
+  "last_scan_msg": "2026-09-28T16:56:38.841785+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
