@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Currency Sniper Bot v2.1 — FINAL
-Pairs: EURUSD, GBPUSD, USDJPY | TF: 5m | Source: Twelve Data
-Behavior: NEVER STOPS. NEVER SILENT. Messages forever.
-8-min internal loop with 1-min proximity alerts.
+Currency Sniper Bot v2.3
+- Compact signal (3 lines)
+- FILLED with SL/TP
+- Scan per-pair status (🟢 signal / ⚪ no signal)
 """
 import os, json, time, traceback
 from datetime import datetime, timedelta, timezone
@@ -54,8 +54,7 @@ def log(*a):
 
 def tg_send(text):
     if not TG_TOKEN or not TG_CHAT_ID:
-        log("TG skip:", text[:80])
-        return False
+        log("TG skip:", text[:80]); return False
     for attempt in range(3):
         try:
             r = requests.post(
@@ -205,7 +204,7 @@ def fetch_td(symbol, interval, outputsize=100):
         return None
 
 def fetch_live_price(pair):
-    if not TD_KEY: return None
+    if not TD_KEY: return None, None
     try:
         r = requests.get(
             f"https://api.twelvedata.com/quote?symbol={TD_SYMBOL[pair]}&apikey={TD_KEY}",
@@ -510,12 +509,6 @@ def has_open_same_setup(state, pair, pattern, direction):
             return True
     return False
 
-def has_open_opposite(state, pair, direction):
-    for t in state["open_trades"]:
-        if t["pair"] == pair and t["direction"] != direction:
-            return t
-    return None
-
 def correlation_warn(pair, direction, open_trades):
     if pair in ("EURUSD", "GBPUSD"):
         other = "GBPUSD" if pair == "EURUSD" else "EURUSD"
@@ -610,62 +603,52 @@ def scan_signals(state):
 # ============================================================
 def msg_signal(sig):
     arrow = "🟢" if sig["direction"] == "BUY" else "🔴"
-    lines = [
-        f"🎯 <b>TIER {sig['tier']} SIGNAL</b> @ {datetime.now(timezone.utc).strftime('%H:%M UTC')}",
-        "━━━━━━━━━━━━━━━━━━━",
-        f"Pair: <b>{sig['pair']}</b>",
-        f"Pattern: <code>{sig['pattern']}</code> {arrow} {sig['direction']}",
-        f"Limit Entry: <b>{fmt_price(sig['pair'], sig['entry'])}</b>",
-        f"SL: {fmt_price(sig['pair'], sig['sl'])} ({sig['sl_pip']} pip)",
-        f"TP: {fmt_price(sig['pair'], sig['tp'])} ({sig['tp_pip']} pip)",
-        f"Lot: {sig['lot']}",
-        f"ETA: ~{sig['eta']} min",
-        "━━━━━━━━━━━━━━━━━━━",
-    ]
+    txt = (f"🎯 <b>{sig['tier']} {sig['pair']}</b> {arrow} {sig['direction']}\n"
+           f"E {fmt_price(sig['pair'], sig['entry'])} | "
+           f"SL {fmt_price(sig['pair'], sig['sl'])} | "
+           f"TP {fmt_price(sig['pair'], sig['tp'])}\n"
+           f"Lot {sig['lot']} | ETA {sig['eta']}min")
     if sig.get("weak"):
-        lines.append("⚠️ <b>Weak signal</b> — 15m trend disagrees")
+        txt += " | ⚠️ weak"
     if sig.get("corr_warn"):
-        lines.append("⚠️ Correlated pair open same direction")
+        txt += " | ⚠️ corr"
     if sig.get("news_warn"):
-        lines.append(sig["news_warn"])
-    else:
-        lines.append("News: ✅ Safe")
-    sp = sig.get("spread") or 0.0
-    lines.append(f"Spread: {sp:.1f} pip")
-    return "\n".join(lines)
+        txt += "\n⚠️ News window"
+    return txt
 
 def msg_scan(state, sigs, reason=""):
     now = datetime.now(timezone.utc).strftime('%H:%M UTC')
     next_t = (datetime.now(timezone.utc) + timedelta(minutes=HEARTBEAT_MIN)).strftime('%H:%M UTC')
+    
     sess_now = []
     for s, label in [("sess_tokyo", "Tokyo"), ("sess_london", "London"),
                      ("ny_am", "NY-AM"), ("ny_pm", "NY-PM")]:
         if in_session(s): sess_now.append(label)
     sess_str = ", ".join(sess_now) if sess_now else "None"
-    txt = (f"⏰ <b>Scan</b> @ {now}\n"
-           f"Pairs: EURUSD, GBPUSD, USDJPY\n"
-           f"Signals: {len(sigs)} new | Open: {len(state['open_trades'])}\n"
-           f"Session: {sess_str}\n"
-           f"Next: {next_t}\n"
-           f"Bot: 🟢 Running")
+    
+    pair_signals = {p: 0 for p in PAIRS}
+    for s in sigs:
+        pair_signals[s["pair"]] = pair_signals.get(s["pair"], 0) + 1
+    
+    lines = [f"⏰ <b>Scan</b> @ {now}"]
+    for pair in PAIRS:
+        cnt = pair_signals.get(pair, 0)
+        if cnt > 0:
+            lines.append(f"🟢 {pair}: {cnt} new signal")
+        else:
+            lines.append(f"⚪ {pair}: no signal")
+    lines.append(f"Open: {len(state['open_trades'])} | Session: {sess_str}")
+    lines.append(f"Next: {next_t} | 🟢 Running")
     if reason:
-        txt += f"\nNote: {reason}"
-    return txt
+        lines.append(reason)
+    return "\n".join(lines)
 
 def msg_heartbeat(state):
     d = state["daily"]
-    top = sorted(state.get("setup_perf", {}).items(),
-                 key=lambda kv: kv[1]["pnl_pip"], reverse=True)[:3]
-    top_str = ""
-    if top:
-        top_str = "\n<b>Top setups:</b>\n" + "\n".join(
-            f"  • {k}: {v['wins']}W/{v['losses']}L ({v['pnl_pip']:+.0f}p)"
-            for k, v in top)
     return (f"💓 <b>Heartbeat</b> @ {datetime.now(timezone.utc).strftime('%H:%M UTC')}\n"
             f"Open: {len(state['open_trades'])} | Today: {d['trades']} trades\n"
             f"Day P/L: {d['pnl_pip']:+.1f} pip (${d['pnl_usd']:+.2f})\n"
-            f"W/L: {d['wins']}/{d['losses']} | Consec L: {state['consec_losses']}"
-            f"{top_str}")
+            f"W/L: {d['wins']}/{d['losses']} | Consec L: {state['consec_losses']}")
 
 def msg_tp(pair, pips, usd, day_total):
     return (f"🎯 <b>TP HIT</b> {pair} +{pips:.0f} pip\n"
@@ -675,19 +658,16 @@ def msg_tp(pair, pips, usd, day_total):
 def msg_sl(pair, pips, usd, consec, emoji):
     return (f"❌ <b>SL HIT</b> {pair} -{abs(pips):.0f} pip\n"
             f"Loss: -${abs(usd):.2f}\n"
-            f"⚠️ Warning: Loss #{consec}. {emoji}\n"
+            f"⚠️ Loss #{consec}. {emoji}\n"
             f"Bot: 🟢 Running")
 
 def msg_warning(text):
     return f"⚠️ <b>WARNING</b>\n{text}\nBot: 🟢 Running"
 
 def msg_proximity(tr, cur_price, distance_pip):
-    return (f"🔔 <b>SIGNAL APPROACHING</b>\n"
-            f"Pair: <b>{tr['pair']}</b> {tr['direction']}\n"
-            f"Entry: {fmt_price(tr['pair'], tr['entry'])}\n"
-            f"Current: {fmt_price(tr['pair'], cur_price)}\n"
-            f"Distance: {distance_pip:.1f} pip\n"
-            f"Fill hone wala hai — ready raho.")
+    return (f"🔔 <b>APPROACHING</b> {tr['pair']} {tr['direction']}\n"
+            f"E {fmt_price(tr['pair'], tr['entry'])} | Now {fmt_price(tr['pair'], cur_price)}\n"
+            f"Dist: {distance_pip:.1f} pip")
 
 # ============================================================
 # TRADE MONITOR
@@ -710,7 +690,7 @@ def monitor_trades(state):
             try:
                 created = datetime.fromisoformat(tr["created_at"].replace("Z","+00:00"))
                 if (now - created) > timedelta(minutes=SIGNAL_EXPIRY_MIN):
-                    tg_send(f"⏱️ <b>Signal expired</b> — {pair} {tr['pattern']} no fill")
+                    tg_send(f"⏱️ <b>Expired</b> {pair} {tr['pattern']} — no fill")
                     continue
             except Exception: pass
 
@@ -731,7 +711,8 @@ def monitor_trades(state):
                 tr["status"] = "open"
                 tr["filled_at"] = now.isoformat()
                 tr["last_check_ts"] = tr["created_at"]
-                tg_send(f"✅ <b>FILLED</b> {pair} {tr['direction']} @ {fmt_price(pair, tr['entry'])}")
+                tg_send(f"✅ <b>FILLED</b> {pair} {tr['direction']} @ {fmt_price(pair, tr['entry'])}\n"
+                        f"SL {fmt_price(pair, tr['sl'])} | TP {fmt_price(pair, tr['tp'])} | Lot {tr['lot']}")
             remaining.append(tr); continue
 
         last_check = tr.get("last_check_ts") or tr.get("filled_at") or tr["created_at"]
@@ -780,7 +761,7 @@ def monitor_trades(state):
                    (tr["direction"]=="SELL" and l <= be_at):
                     tr["sl"] = tr["entry"]
                     tr["breakeven_moved"] = True
-                    tg_send(f"🛡️ SL moved to BE {pair}")
+                    tg_send(f"🛡️ SL → BE {pair}")
                     break
 
         perf_key = f"{pair}_{tr['pattern']}_{tr['direction']}"
@@ -816,20 +797,20 @@ def monitor_trades(state):
             if not tr.get("breakeven_moved"):
                 state["consec_losses"] += 1
             sp["losses"] += 1; sp["pnl_pip"] += real_pip
-            emoji = "Market choppy." if state["consec_losses"] < MAX_CONSEC_LOSSES else "Careful!"
+            emoji = "Choppy." if state["consec_losses"] < MAX_CONSEC_LOSSES else "Careful!"
             tg_send(msg_sl(pair, abs(real_pip), pnl_usd, state["consec_losses"], emoji))
             if state["consec_losses"] >= MAX_CONSEC_LOSSES:
-                tg_send(msg_warning(f"{MAX_CONSEC_LOSSES} consecutive losses. Stay alert."))
+                tg_send(msg_warning(f"{MAX_CONSEC_LOSSES} consec losses."))
             if state["daily"]["pnl_usd"] <= -ACCOUNT_BAL * MAX_DAILY_LOSS_PCT and \
                not state["daily"].get("loss_warned"):
-                tg_send(msg_warning(f"Daily loss > {MAX_DAILY_LOSS_PCT*100:.0f}%. Manage size."))
+                tg_send(msg_warning(f"Daily loss > {MAX_DAILY_LOSS_PCT*100:.0f}%."))
                 state["daily"]["loss_warned"] = True
             continue
 
         try:
             opened = datetime.fromisoformat((tr.get("filled_at") or tr["created_at"]).replace("Z","+00:00"))
             if (now - opened) > timedelta(hours=TRADE_MAX_HOURS):
-                tg_send(f"⏱️ Time exit {pair} after {TRADE_MAX_HOURS}h")
+                tg_send(f"⏱️ Time exit {pair}")
                 continue
         except Exception: pass
 
@@ -848,7 +829,7 @@ def try_flip(state, sig):
     if not flip:
         return False
 
-    tg_send(f"🔄 <b>FLIP</b> {sig['pair']}: closing {flip['direction']} → opening {sig['direction']}")
+    tg_send(f"🔄 <b>FLIP</b> {sig['pair']} {flip['direction']}→{sig['direction']}")
 
     try:
         cur, _ = fetch_live_price(sig["pair"])
@@ -869,7 +850,7 @@ def try_flip(state, sig):
     return True
 
 # ============================================================
-# PROXIMITY LOOP (1-min)
+# PROXIMITY
 # ============================================================
 def proximity_check(state):
     for tr in state["open_trades"]:
@@ -902,7 +883,7 @@ def internal_loop(state):
 # MAIN
 # ============================================================
 def main():
-    log("=== Currency Sniper Bot v2.1 ===")
+    log("=== Currency Sniper Bot v2.3 ===")
     state = ensure_state()
 
     try:
@@ -919,7 +900,7 @@ def main():
     for s in sigs:
         if len(state["open_trades"]) >= MAX_OPEN_TRADES:
             if not try_flip(state, s):
-                log("max trades reached, skip"); break
+                log("max trades, skip"); break
         else:
             try_flip(state, s)
 
