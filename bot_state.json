@@ -87,8 +87,8 @@
     "EURUSD_tweezer_top_SELL": "2026-09-29T03:54:44.790461+00:00",
     "EURUSD_pullback_bull_BUY": "2026-09-29T04:05:42.694621+00:00"
   },
-  "last_heartbeat": "2026-09-29T17:26:22.269500+00:00",
-  "last_scan_msg": "2026-09-29T17:26:22.269500+00:00",
+  "last_heartbeat": "2026-09-29T17:53:51.316105+00:00",
+  "last_scan_msg": "2026-09-29T17:53:51.316105+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
