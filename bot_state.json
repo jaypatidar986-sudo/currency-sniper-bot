@@ -3,44 +3,6 @@
     {
       "pair": "EURUSD",
       "direction": "BUY",
-      "entry": 1.13733,
-      "sl": 1.13533,
-      "tp": 1.14133,
-      "sl_pip": 20,
-      "tp_pip": 40,
-      "lot": 0.5,
-      "tier": "S+",
-      "pattern": "at_day_lo",
-      "status": "open",
-      "created_at": "2026-09-28T08:53:04.740530+00:00",
-      "breakeven_moved": false,
-      "partial_done": false,
-      "proximity_alerted": false,
-      "last_check_ts": "2026-09-29T03:49:30.216560+00:00",
-      "filled_at": "2026-09-28T08:54:11.349971+00:00"
-    },
-    {
-      "pair": "EURUSD",
-      "direction": "BUY",
-      "entry": 1.13642,
-      "sl": 1.13142,
-      "tp": 1.13892,
-      "sl_pip": 50,
-      "tp_pip": 25,
-      "lot": 0.2,
-      "tier": "A",
-      "pattern": "up3",
-      "status": "open",
-      "created_at": "2026-09-29T01:09:03.048953+00:00",
-      "breakeven_moved": false,
-      "partial_done": false,
-      "proximity_alerted": false,
-      "last_check_ts": "2026-09-29T03:49:30.216560+00:00",
-      "filled_at": "2026-09-29T01:10:09.107929+00:00"
-    },
-    {
-      "pair": "EURUSD",
-      "direction": "BUY",
       "entry": 1.13642,
       "sl": 1.13142,
       "tp": 1.13892,
@@ -54,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-29T03:49:30.216560+00:00",
+      "last_check_ts": "2026-09-29T04:01:50.178738+00:00",
       "filled_at": "2026-09-29T02:06:12.702015+00:00"
     },
     {
@@ -73,7 +35,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-29T03:49:30.216560+00:00",
+      "last_check_ts": "2026-09-29T04:01:50.178738+00:00",
       "filled_at": "2026-09-29T02:24:54.954644+00:00"
     },
     {
@@ -92,8 +54,46 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-29T03:49:30.216560+00:00",
+      "last_check_ts": "2026-09-29T04:01:50.178738+00:00",
       "filled_at": "2026-09-29T03:27:39.136622+00:00"
+    },
+    {
+      "pair": "EURUSD",
+      "direction": "SELL",
+      "entry": 1.13663,
+      "sl": 1.14163,
+      "tp": 1.13413,
+      "sl_pip": 50,
+      "tp_pip": 25,
+      "lot": 0.2,
+      "tier": "A",
+      "pattern": "dn3",
+      "status": "open",
+      "created_at": "2026-09-29T03:54:44.790461+00:00",
+      "breakeven_moved": false,
+      "partial_done": false,
+      "proximity_alerted": false,
+      "last_check_ts": "2026-09-29T04:01:50.178738+00:00",
+      "filled_at": "2026-09-29T03:55:47.520157+00:00"
+    },
+    {
+      "pair": "EURUSD",
+      "direction": "SELL",
+      "entry": 1.13663,
+      "sl": 1.14113,
+      "tp": 1.13443,
+      "sl_pip": 45,
+      "tp_pip": 22,
+      "lot": 0.22,
+      "tier": "B",
+      "pattern": "tweezer_top",
+      "status": "open",
+      "created_at": "2026-09-29T03:54:44.790461+00:00",
+      "breakeven_moved": false,
+      "partial_done": false,
+      "proximity_alerted": false,
+      "last_check_ts": "2026-09-29T04:01:50.178738+00:00",
+      "filled_at": "2026-09-29T03:55:47.520157+00:00"
     }
   ],
   "consec_losses": 0,
@@ -105,7 +105,9 @@
     "EURUSD_up3_BUY": "2026-09-29T01:09:03.048953+00:00",
     "EURUSD_morning_star_BUY": "2026-09-29T02:05:11.273616+00:00",
     "GBPUSD_up3_BUY": "2026-09-29T02:23:52.663355+00:00",
-    "GBPUSD_pullback_bull_BUY": "2026-09-29T03:26:36.994060+00:00"
+    "GBPUSD_pullback_bull_BUY": "2026-09-29T03:26:36.994060+00:00",
+    "EURUSD_dn3_SELL": "2026-09-29T03:54:44.790461+00:00",
+    "EURUSD_tweezer_top_SELL": "2026-09-29T03:54:44.790461+00:00"
   },
   "last_heartbeat": "2026-09-29T03:42:11.936982+00:00",
   "last_scan_msg": "2026-09-29T03:42:11.936982+00:00",
@@ -134,13 +136,23 @@
       "wins": 0,
       "losses": 0,
       "pnl_pip": 0.0
+    },
+    "EURUSD_dn3_SELL": {
+      "wins": 0,
+      "losses": 0,
+      "pnl_pip": 0.0
+    },
+    "EURUSD_tweezer_top_SELL": {
+      "wins": 0,
+      "losses": 0,
+      "pnl_pip": 0.0
     }
   },
   "daily": {
     "date": "2026-09-29",
     "pnl_pip": 0.0,
     "pnl_usd": 0.0,
-    "trades": 4,
+    "trades": 8,
     "wins": 0,
     "losses": 0,
     "pair_trades": {},
