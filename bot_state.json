@@ -125,8 +125,8 @@
     "GBPUSD_2bar_bear_SELL": "2026-09-30T01:12:19.522065+00:00",
     "EURUSD_morning_star_BUY": "2026-09-30T03:05:59.081453+00:00"
   },
-  "last_heartbeat": "2026-09-30T05:26:41.007863+00:00",
-  "last_scan_msg": "2026-09-30T05:26:41.007863+00:00",
+  "last_heartbeat": "2026-09-30T05:54:17.716388+00:00",
+  "last_scan_msg": "2026-09-30T05:54:17.716388+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
