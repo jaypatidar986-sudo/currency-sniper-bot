@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-30T09:58:10.826917+00:00",
+  "fetched_at": "2026-09-30T16:09:04.357027+00:00",
   "events": [
     {
       "title": "ECB President Lagarde Speaks",
@@ -59,6 +59,12 @@
       "title": "President Trump Speaks",
       "country": "USD",
       "date": "2026-09-30T15:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "FOMC Member Kashkari Speaks",
+      "country": "USD",
+      "date": "2026-09-30T18:00:00-04:00",
       "impact": "medium"
     },
     {
