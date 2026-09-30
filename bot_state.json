@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T03:13:03.216171+00:00",
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -35,7 +35,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T03:13:03.216171+00:00",
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -54,7 +54,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T03:13:03.216171+00:00",
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -73,7 +73,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T03:13:03.216171+00:00",
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -92,24 +92,42 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T03:13:03.216171+00:00",
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
       "filled_at": "2026-09-30T03:06:00.463716+00:00"
+    },
+    {
+      "pair": "EURUSD",
+      "direction": "BUY",
+      "entry": 1.13351,
+      "sl": 1.1285100000000001,
+      "tp": 1.13601,
+      "sl_pip": 50,
+      "tp_pip": 25,
+      "lot": 0.2,
+      "tier": "A",
+      "pattern": "pullback_bull",
+      "status": "open",
+      "created_at": "2026-09-30T03:26:56.798652+00:00",
+      "breakeven_moved": false,
+      "partial_done": false,
+      "proximity_alerted": false,
+      "last_check_ts": "2026-09-30T03:34:02.863126+00:00",
+      "filled_at": "2026-09-30T03:27:59.283743+00:00"
     }
   ],
   "consec_losses": 0,
   "recent_signals": {
-    "GBPUSD_pullback_bull_BUY": "2026-09-29T03:26:36.994060+00:00",
     "EURUSD_dn3_SELL": "2026-09-29T03:54:44.790461+00:00",
     "EURUSD_tweezer_top_SELL": "2026-09-30T02:53:24.236162+00:00",
-    "EURUSD_pullback_bull_BUY": "2026-09-29T04:05:42.694621+00:00",
+    "EURUSD_pullback_bull_BUY": "2026-09-30T03:26:56.798652+00:00",
     "GBPUSD_dn3_SELL": "2026-09-30T01:12:19.522065+00:00",
     "GBPUSD_pullback_bear_SELL": "2026-09-30T01:12:19.522065+00:00",
     "GBPUSD_tweezer_top_SELL": "2026-09-30T01:12:19.522065+00:00",
     "GBPUSD_2bar_bear_SELL": "2026-09-30T01:12:19.522065+00:00",
     "EURUSD_morning_star_BUY": "2026-09-30T03:05:59.081453+00:00"
   },
-  "last_heartbeat": "2026-09-30T02:53:26.212070+00:00",
-  "last_scan_msg": "2026-09-30T02:53:26.212070+00:00",
+  "last_heartbeat": "2026-09-30T03:26:57.775317+00:00",
+  "last_scan_msg": "2026-09-30T03:26:57.775317+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
@@ -165,13 +183,18 @@
       "wins": 0,
       "losses": 0,
       "pnl_pip": 0.0
+    },
+    "EURUSD_pullback_bull_BUY": {
+      "wins": 0,
+      "losses": 0,
+      "pnl_pip": 0.0
     }
   },
   "daily": {
     "date": "2026-09-30",
     "pnl_pip": 22.0,
     "pnl_usd": 48.4,
-    "trades": 10,
+    "trades": 11,
     "wins": 1,
     "losses": 0,
     "pair_trades": {
