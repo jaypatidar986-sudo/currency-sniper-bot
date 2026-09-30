@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T02:02:01.460800+00:00",
+      "last_check_ts": "2026-09-30T02:13:56.329510+00:00",
       "filled_at": "2026-09-29T02:06:12.702015+00:00"
     },
     {
@@ -35,7 +35,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T02:02:01.460800+00:00",
+      "last_check_ts": "2026-09-30T02:13:56.329510+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -54,7 +54,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T02:02:01.460800+00:00",
+      "last_check_ts": "2026-09-30T02:13:56.329510+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -73,7 +73,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T02:02:01.460800+00:00",
+      "last_check_ts": "2026-09-30T02:13:56.329510+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -92,13 +92,12 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-09-30T02:02:01.460800+00:00",
+      "last_check_ts": "2026-09-30T02:13:56.329510+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     }
   ],
   "consec_losses": 0,
   "recent_signals": {
-    "EURUSD_morning_star_BUY": "2026-09-29T02:05:11.273616+00:00",
     "GBPUSD_up3_BUY": "2026-09-29T02:23:52.663355+00:00",
     "GBPUSD_pullback_bull_BUY": "2026-09-29T03:26:36.994060+00:00",
     "EURUSD_dn3_SELL": "2026-09-29T03:54:44.790461+00:00",
