@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-29T21:51:44.942353+00:00",
+  "fetched_at": "2026-09-30T03:55:43.599687+00:00",
   "events": [
     {
       "title": "ECB President Lagarde Speaks",
@@ -53,6 +53,12 @@
       "title": "Final GDP Price Index q/q",
       "country": "USD",
       "date": "2026-09-30T08:30:00-04:00",
+      "impact": "medium"
+    },
+    {
+      "title": "President Trump Speaks",
+      "country": "USD",
+      "date": "2026-09-30T15:30:00-04:00",
       "impact": "medium"
     },
     {
