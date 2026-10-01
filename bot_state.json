@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -35,7 +35,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -54,7 +54,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -73,7 +73,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-09-30T01:13:25.323692+00:00"
     },
     {
@@ -92,7 +92,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-10-01T01:45:23.457446+00:00"
     },
     {
@@ -111,7 +111,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-10-01T01:45:23.457446+00:00"
     },
     {
@@ -130,7 +130,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-01T01:51:30.999013+00:00",
+      "last_check_ts": "2026-10-01T02:03:24.751906+00:00",
       "filled_at": "2026-10-01T01:45:23.457446+00:00"
     }
   ],
@@ -143,8 +143,8 @@
     "EURUSD_dn3_SELL": "2026-10-01T01:44:16.532934+00:00",
     "EURUSD_pullback_bear_SELL": "2026-10-01T01:44:16.532934+00:00"
   },
-  "last_heartbeat": "2026-10-01T01:29:28.398375+00:00",
-  "last_scan_msg": "2026-10-01T01:29:28.398375+00:00",
+  "last_heartbeat": "2026-10-01T01:56:16.048784+00:00",
+  "last_scan_msg": "2026-10-01T01:56:16.048784+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
