@@ -1,5 +1,24 @@
 {
-  "open_trades": [],
+  "open_trades": [
+    {
+      "pair": "GBPUSD",
+      "direction": "BUY",
+      "entry": 1.31821,
+      "sl": 1.31621,
+      "tp": 1.32221,
+      "sl_pip": 20,
+      "tp_pip": 40,
+      "lot": 0.5,
+      "tier": "S+",
+      "pattern": "at_day_lo",
+      "status": "limit_pending",
+      "created_at": "2026-10-02T01:10:16.662327+00:00",
+      "breakeven_moved": false,
+      "partial_done": false,
+      "proximity_alerted": false,
+      "last_check_ts": "2026-10-02T01:10:16.662327+00:00"
+    }
+  ],
   "consec_losses": 0,
   "recent_signals": {
     "EURUSD_tweezer_top_SELL": "2026-10-01T01:44:16.532934+00:00",
@@ -10,7 +29,8 @@
     "EURUSD_at_day_lo_BUY": "2026-10-01T03:06:25.150084+00:00",
     "GBPUSD_tweezer_top_SELL": "2026-10-01T02:25:50.402300+00:00",
     "GBPUSD_dn3_SELL": "2026-10-01T03:06:25.150084+00:00",
-    "GBPUSD_2bar_bear_SELL": "2026-10-01T03:06:25.150084+00:00"
+    "GBPUSD_2bar_bear_SELL": "2026-10-01T03:06:25.150084+00:00",
+    "GBPUSD_at_day_lo_BUY": "2026-10-02T01:10:16.662327+00:00"
   },
   "last_heartbeat": "2026-10-02T00:56:54.753741+00:00",
   "last_scan_msg": "2026-10-02T00:56:54.753741+00:00",
@@ -85,7 +105,7 @@
     "date": "2026-10-02",
     "pnl_pip": 118.0,
     "pnl_usd": 121.10000000000001,
-    "trades": 0,
+    "trades": 1,
     "wins": 3,
     "losses": 1,
     "pair_trades": {
