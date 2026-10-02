@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-02T02:13:45.223822+00:00",
+      "last_check_ts": "2026-10-02T02:32:11.798633+00:00",
       "filled_at": "2026-10-02T02:07:41.736633+00:00"
     }
   ],
@@ -28,10 +28,11 @@
     "GBPUSD_dn3_SELL": "2026-10-01T03:06:25.150084+00:00",
     "GBPUSD_2bar_bear_SELL": "2026-10-01T03:06:25.150084+00:00",
     "GBPUSD_at_day_lo_BUY": "2026-10-02T01:41:10.785434+00:00",
-    "GBPUSD_rej_day_lo_BUY": "2026-10-02T01:41:10.785434+00:00"
+    "GBPUSD_rej_day_lo_BUY": "2026-10-02T01:41:10.785434+00:00",
+    "USDJPY_pullback_bull_BUY": "2026-10-02T02:25:04.457175+00:00"
   },
-  "last_heartbeat": "2026-10-02T01:53:48.748893+00:00",
-  "last_scan_msg": "2026-10-02T01:53:48.748893+00:00",
+  "last_heartbeat": "2026-10-02T02:25:06.562751+00:00",
+  "last_scan_msg": "2026-10-02T02:25:06.562751+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
@@ -97,18 +98,24 @@
       "wins": 0,
       "losses": 0,
       "pnl_pip": 0.0
+    },
+    "USDJPY_pullback_bull_BUY": {
+      "wins": 1,
+      "losses": 0,
+      "pnl_pip": 22.0
     }
   },
   "daily": {
     "date": "2026-10-02",
-    "pnl_pip": 118.0,
-    "pnl_usd": 121.10000000000001,
-    "trades": 4,
-    "wins": 3,
+    "pnl_pip": 140.0,
+    "pnl_usd": 169.74200000000002,
+    "trades": 5,
+    "wins": 4,
     "losses": 1,
     "pair_trades": {
       "GBPUSD": 3,
-      "EURUSD": 1
+      "EURUSD": 1,
+      "USDJPY": 1
     },
     "loss_warned": false
   }
