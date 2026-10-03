@@ -47,8 +47,8 @@
     "GBPUSD_2bar_bear_SELL": "2026-10-03T02:04:51.118679+00:00",
     "EURUSD_pullback_bull_BUY": "2026-10-03T04:26:38.827663+00:00"
   },
-  "last_heartbeat": "2026-10-03T09:52:11.385001+00:00",
-  "last_scan_msg": "2026-10-03T09:52:11.385001+00:00",
+  "last_heartbeat": "2026-10-03T10:24:40.121242+00:00",
+  "last_scan_msg": "2026-10-03T10:24:40.121242+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
