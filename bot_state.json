@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-03T03:08:32.075208+00:00",
+      "last_check_ts": "2026-10-03T03:38:48.690799+00:00",
       "filled_at": "2026-10-03T01:08:31.008248+00:00"
     },
     {
@@ -35,7 +35,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-03T03:08:32.075208+00:00",
+      "last_check_ts": "2026-10-03T03:38:48.690799+00:00",
       "filled_at": "2026-10-03T01:08:31.008248+00:00"
     },
     {
@@ -54,7 +54,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-03T03:08:32.075208+00:00",
+      "last_check_ts": "2026-10-03T03:38:48.690799+00:00",
       "filled_at": "2026-10-03T02:05:52.593041+00:00"
     }
   ],
@@ -66,8 +66,8 @@
     "EURUSD_tweezer_top_SELL": "2026-10-03T01:07:27.679455+00:00",
     "GBPUSD_2bar_bear_SELL": "2026-10-03T02:04:51.118679+00:00"
   },
-  "last_heartbeat": "2026-10-03T03:01:29.129756+00:00",
-  "last_scan_msg": "2026-10-03T03:01:29.129756+00:00",
+  "last_heartbeat": "2026-10-03T03:31:44.315636+00:00",
+  "last_scan_msg": "2026-10-03T03:31:44.315636+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
