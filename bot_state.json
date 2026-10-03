@@ -4,7 +4,7 @@
       "pair": "EURUSD",
       "direction": "BUY",
       "entry": 1.1237300000000001,
-      "sl": 1.1187300000000002,
+      "sl": 1.1237300000000001,
       "tp": 1.12623,
       "sl_pip": 50,
       "tp_pip": 25,
@@ -13,10 +13,10 @@
       "pattern": "pullback_bull",
       "status": "open",
       "created_at": "2026-10-02T02:06:40.695525+00:00",
-      "breakeven_moved": false,
+      "breakeven_moved": true,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-02T05:47:04.181028+00:00",
+      "last_check_ts": "2026-10-03T00:14:32.933971+00:00",
       "filled_at": "2026-10-02T02:07:41.736633+00:00"
     }
   ],
@@ -30,8 +30,8 @@
     "GBPUSD_tweezer_top_SELL": "2026-10-02T05:06:56.399666+00:00",
     "GBPUSD_pullback_bear_SELL": "2026-10-02T05:06:56.399666+00:00"
   },
-  "last_heartbeat": "2026-10-02T23:50:33.722925+00:00",
-  "last_scan_msg": "2026-10-02T23:50:33.722925+00:00",
+  "last_heartbeat": "2026-10-03T00:07:30.647786+00:00",
+  "last_scan_msg": "2026-10-03T00:07:30.647786+00:00",
   "setup_perf": {
     "EURUSD_at_day_lo_BUY": {
       "wins": 0,
@@ -105,17 +105,13 @@
     }
   },
   "daily": {
-    "date": "2026-10-02",
-    "pnl_pip": 162.0,
-    "pnl_usd": 218.14200000000002,
-    "trades": 12,
-    "wins": 5,
-    "losses": 1,
-    "pair_trades": {
-      "GBPUSD": 4,
-      "EURUSD": 1,
-      "USDJPY": 1
-    },
+    "date": "2026-10-03",
+    "pnl_pip": 0.0,
+    "pnl_usd": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "pair_trades": {},
     "loss_warned": false
   }
 }
