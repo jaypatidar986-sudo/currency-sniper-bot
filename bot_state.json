@@ -16,7 +16,7 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-03T01:58:43.851071+00:00",
+      "last_check_ts": "2026-10-03T02:11:54.730778+00:00",
       "filled_at": "2026-10-03T01:08:31.008248+00:00"
     },
     {
@@ -35,8 +35,27 @@
       "breakeven_moved": false,
       "partial_done": false,
       "proximity_alerted": false,
-      "last_check_ts": "2026-10-03T01:58:43.851071+00:00",
+      "last_check_ts": "2026-10-03T02:11:54.730778+00:00",
       "filled_at": "2026-10-03T01:08:31.008248+00:00"
+    },
+    {
+      "pair": "GBPUSD",
+      "direction": "SELL",
+      "entry": 1.32432,
+      "sl": 1.32882,
+      "tp": 1.32212,
+      "sl_pip": 45,
+      "tp_pip": 22,
+      "lot": 0.22,
+      "tier": "B",
+      "pattern": "2bar_bear",
+      "status": "open",
+      "created_at": "2026-10-03T02:04:51.118679+00:00",
+      "breakeven_moved": false,
+      "partial_done": false,
+      "proximity_alerted": false,
+      "last_check_ts": "2026-10-03T02:11:54.730778+00:00",
+      "filled_at": "2026-10-03T02:05:52.593041+00:00"
     }
   ],
   "consec_losses": 0,
@@ -46,7 +65,8 @@
     "GBPUSD_pullback_bull_BUY": "2026-10-02T04:56:03.050424+00:00",
     "GBPUSD_tweezer_top_SELL": "2026-10-03T01:07:27.679455+00:00",
     "GBPUSD_pullback_bear_SELL": "2026-10-02T05:06:56.399666+00:00",
-    "EURUSD_tweezer_top_SELL": "2026-10-03T01:07:27.679455+00:00"
+    "EURUSD_tweezer_top_SELL": "2026-10-03T01:07:27.679455+00:00",
+    "GBPUSD_2bar_bear_SELL": "2026-10-03T02:04:51.118679+00:00"
   },
   "last_heartbeat": "2026-10-03T01:51:40.626476+00:00",
   "last_scan_msg": "2026-10-03T01:51:40.626476+00:00",
@@ -126,7 +146,7 @@
     "date": "2026-10-03",
     "pnl_pip": 0.0,
     "pnl_usd": 0.0,
-    "trades": 3,
+    "trades": 4,
     "wins": 0,
     "losses": 0,
     "pair_trades": {},
